@@ -1,0 +1,16 @@
+{% extends 'common/list.html' %}
+
+{% block content %}
+  <div class="row">
+    {% for question in object_list %}
+      {% include 'polls/question.html' with question=question %}
+      {% include 'polls/question.html' with question=question %}
+      {% include 'polls/question.html' with question=question %}
+
+    {% empty %}
+        <li>No questions yet.</li>
+    {% endfor %}
+  </div>
+
+{% endblock %}
+

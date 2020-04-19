@@ -1,0 +1,14 @@
+<div class="col-sm-4 mb-5">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ question.id }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ question.pub_date }}</h6>
+      <p class="card-text">{{ question.question_text }}</p>
+
+      {% url 'polls:question-list' as next %}
+      <a href="{% url 'polls:question-detail' question.id %}" class="card-link">Details</a>
+      <a href="{% url 'polls:question-update' question.id %}?next={{ next }}" class="card-link">Update</a>
+      <a href="{% url 'polls:question-delete' question.id %}?next={{ next }}" class="card-link">Delete</a>
+    </div>
+  </div>
+</div>

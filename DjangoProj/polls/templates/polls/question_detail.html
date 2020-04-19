@@ -1,0 +1,9 @@
+{% extends 'common/detail.html' %}
+
+{% block header %}
+   {{ object }}
+{% endblock %}
+
+{% block content %}
+    {% include 'polls/question.html' with question=object %}
+{% endblock %}
